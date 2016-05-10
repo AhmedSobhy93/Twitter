@@ -11,6 +11,18 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-1.11.1.min
 //= require jquery_ujs
 //= require turbolinks
+//= require owl.carousel.min
+//= require bootstrap.min
+//= require wow.min
+//= require typewriter
+
+//= require jquery.onepagenav
+//= require main
+//= require tooltip
+
 //= require_tree .
+
+
