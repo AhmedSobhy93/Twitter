@@ -19,7 +19,9 @@
 					<li><a href="#services">Services</a></li>
 					<li><a href="#team">Team</a></li>
 					<li><a href="#pricing">Pricing</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>
+					<li><!-- <a href="" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a> -->
+					<%= link_to "Sign Up", new_user_path, :remote => true, 'data-toggle' => 'modal', 'data-target' => '#modal1', :class => "btn btn-blue", method: 'get' %>
+					</li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -35,6 +37,13 @@
 							<h3 class="light white">Be Beside Your Friends.</h3>
 							<h1 class="white typed">Connect With Them right now.</h1>
 							<span class="typed-cursor">|</span>
+							<% if !flash.empty? %>
+								<h4 class="light white">
+									<% flash.each do |key, value| %>
+		  								<%= content_tag :div, value, class: "flash #{key}" %>
+									<% end %>
+								</h4>
+   							 <% end %>   
 						</div>
 					</div>
 				</div>

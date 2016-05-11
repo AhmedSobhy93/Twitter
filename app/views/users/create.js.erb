@@ -1,0 +1,2 @@
+// $('#register_errors').html('<%= flash[:notice] %>');
+$(document).find("#register_errors").html('<%= escape_javascript(render("shared/error_messages", :formats => [:html])) %>');

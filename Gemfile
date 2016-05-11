@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '2.0.0'
 gem "animate-rails"
 gem 'mysql'
+gem 'protected_attributes'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,7 +44,7 @@ group :development, :test do
   gem 'byebug'
   
   #testing gems
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails'
   gem 'capybara'
 end
 
@@ -50,6 +52,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
+  gem 'annotate', '~> 2.4.1.beta'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
