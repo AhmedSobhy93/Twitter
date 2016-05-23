@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'static_pages/home'
 
   get 'static_pages/help'
@@ -16,6 +17,16 @@ Rails.application.routes.draw do
 
 
   resources :users
+
+  resources :microposts
+
+  resources :sessions, only: [:new ,:create ,:destroy]
+  get 'login' => 'sessions#new' ,as: "login"
+  delete 'logout' => 'sessions#destroy'  ,as: "logout"
+  
+  #get 'logout' => 'sessions#destroy' ,as: "logout" 
+  # match '/signout', to: '/sessions#destroy',via: :delete
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

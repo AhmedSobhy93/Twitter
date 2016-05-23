@@ -1,0 +1,60 @@
+<section id="services" class="section section-padded">
+		<div class="container">
+			<div class="row text-center title">
+				<h2>Posts</h2>
+				<h4 class="light muted">Manage Your posts Easily!</h4>
+			</div>
+			<div class="row services">
+				<div class="col-md-4">
+					<div class="service">
+						<div class="icon-holder">
+							
+							<%= image_tag "icons/heart-blue.png", :alt => nil,class: "icon" %>
+						</div>
+						<h4 class="heading">Add New Post</h4>
+						<div class="description">
+							<% if signed_in? %>
+							<%= render "application/micropost_form" %>
+							<% end %>
+						</div>	
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service">
+						<div class="icon-holder">
+							
+							<%= image_tag "icons/guru-blue.png", :alt => nil,class: "icon" %>
+						</div>
+						<h4 class="heading">Yoga Pilates</h4>
+						<p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service">
+						<div class="icon-holder">
+							
+							<%= image_tag "icons/weight-blue.png", :alt => nil,class: "icon" %>
+						</div>
+						<h4 class="heading">Posts</h4>
+						<p class="description">
+							<% if current_user.microposts.any? %>
+							<h5 class="description"> Number of posts <%= current_user.microposts.count %> </h5>
+							<ul  class="list-group description">
+							<%= render @microposts %>
+							<%= js_will_paginate @microposts , :params => { :my_excluded_param => nil } %>
+							</ul>
+							
+							 							<% else %>
+							<h3> Sorry You Don't have any posts Yet </h3>
+							<% end %>
+						</p>
+					</div>
+				</div>
+
+
+				
+				
+			</div>
+		</div>
+		<div class="cut cut-bottom"></div>
+	</section>
